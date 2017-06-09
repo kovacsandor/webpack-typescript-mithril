@@ -1,0 +1,24 @@
+{
+	"name": "webpack-typescript-mithril",
+	"version": "1.0.0",
+	"description": "https://webpack.js.org/guides/get-started/",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack --config webpack.config.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kovacsandor/webpack-typescript-mithril.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kovacsandor/webpack-typescript-mithril/issues"
+	},
+	"homepage": "https://github.com/kovacsandor/webpack-typescript-mithril#readme",
+	"devDependencies": {
+		"webpack": "^2.6.1"
+	}
+}
