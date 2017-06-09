@@ -109,3 +109,83 @@ resolve: {
 }
 ...
 ```
+
+## Mithril
+https://mithril.js.org/installation.html#npm
+
+`npm install mithril --save`
+
+https://github.com/spacejack/mithril.d.ts
+
+`npm install --save-dev @types/mithril`
+
+tsconfig.json
+```json
+...
+"target": "es5",
+"lib": [
+	"dom",
+	"es2015",
+	"es2015.promise"
+]
+...
+```
+
+<!--"Basic HTML5 page": {
+	"prefix": "html5",
+	"body": [
+		"<!DOCTYPE html>",
+		"<html lang=\"en\">",
+		"",
+		"<head>",
+		"\t<meta charset=\"utf-8\">",
+		"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">",
+		"",
+		"\t<title>${1:title}</title>",
+		"\t<!--<link rel=\"stylesheet\" href=\"dist/style.css\">",
+		"</head>",
+		"",
+		"<body>",
+		"\t<h1>Hello, ${1:title}!</h1>$0",
+		"",
+		"\t<!--<script src=\"dist/bundle.js\"></script>",
+		"</body>",
+		"",
+		"</html>"
+	],
+	"description": "Basic HTML5 page"
+}-->
+
+<!--"Mithril component": {
+	"prefix": "mithril component",
+	"body": [
+		"import * as m from 'mithril'",
+		"import { Component } from 'mithril'",
+		"",
+		"export interface Attrs { }",
+		"interface State { }",
+		"",
+		"type Vnode = m.Vnode<Attrs, State>",
+		"type VnodeDOM = m.VnodeDOM<Attrs, State>",
+		"",
+		"export let ${1:ComponentName}: Component<Attrs, State> = {",
+		"",
+		"\t// oninit(vnode) { },",
+		"",
+		"\tview(vnode) {",
+		"\t\treturn (",
+		"\t\t\tm(`div`,",
+		"\t\t\t\t`${1:ComponentName}`",
+		"\t\t\t)",
+		"\t\t)",
+		"\t},",
+		"",
+		"\t// oncreate(vnode) { },",
+		"\t// onbeforeupdate(vnode, old) { },",
+		"\t// onupdate(vnode) { },",
+		"\t// onbeforeremove(vnode) { },",
+		"\t// onremove(vnode) { }",
+		"}"
+	],
+	"description": "Mithril component"
+}-->

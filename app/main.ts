@@ -1,3 +1,5 @@
-import { greet } from './test'
+import * as m from 'mithril'
 
-greet()
+import { TestComponent } from './TestComponent'
+
+m.mount(document.body, { view: () => m(TestComponent) })
