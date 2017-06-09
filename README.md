@@ -57,18 +57,55 @@ tsconfig.json
 
 webpack.config.js
 ```javascript
-...
+let path = require(`path`)
+
 module.exports = {
-	devtool: 'inline-source-map',
+	devtool: `inline-source-map`,
 	entry: `./app/main.ts`,
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				loader: `ts-loader`,
 				exclude: /node_modules/,
 			}
 		]
 	},
+	output: {
+		filename: `bundle.js`,
+		path: path.resolve(__dirname, `dist`)
+	},
+	resolve: {
+		extensions: [`.ts`]
+	}
+}
+```
+
+## DevServer
+https://webpack.js.org/guides/development/
+
+`npm install --save-dev webpack-dev-server`
+
+package.json
+```json
+{
 	...
+	"scripts": {
+		"start": "webpack-dev-server --open"
+	},
+	...
+}
+```
+
+webpack.config.js
+```javascript
+...
+output: {
+	...
+	publicPath: `/dist/`
+},
+resolve: {
+	extensions: [`.js`, `.ts`]
+}
+...
 ```

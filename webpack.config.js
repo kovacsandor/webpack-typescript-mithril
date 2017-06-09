@@ -1,19 +1,23 @@
 let path = require(`path`)
 
 module.exports = {
-	devtool: 'inline-source-map',
+	devtool: `inline-source-map`,
 	entry: `./app/main.ts`,
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				loader: 'ts-loader',
+				loader: `ts-loader`,
 				exclude: /node_modules/,
 			}
 		]
 	},
 	output: {
 		filename: `bundle.js`,
-		path: path.resolve(__dirname, `dist`)
+		path: path.resolve(__dirname, `dist`),
+		publicPath: `/dist/`
+	},
+	resolve: {
+		extensions: [`.js`, `.ts`]
 	}
 }

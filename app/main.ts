@@ -1,1 +1,3 @@
-console.log(`Hello, Typescript!`)
+import { greet } from './test'
+
+greet()
