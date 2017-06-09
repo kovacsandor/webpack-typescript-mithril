@@ -1,7 +1,17 @@
 let path = require(`path`)
 
 module.exports = {
-	entry: `./app/index.js`,
+	devtool: 'inline-source-map',
+	entry: `./app/main.ts`,
+	module: {
+		rules: [
+			{
+				test: /\.tsx?$/,
+				loader: 'ts-loader',
+				exclude: /node_modules/,
+			}
+		]
+	},
 	output: {
 		filename: `bundle.js`,
 		path: path.resolve(__dirname, `dist`)

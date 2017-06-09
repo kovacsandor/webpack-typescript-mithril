@@ -8,14 +8,6 @@ https://webpack.js.org/guides/get-started/
 
 `npm install --save-dev webpack`
 
-index.html
-```html
-...
-	<script src="dist/bundle.js"></script>
-</body>
-...
-```
-
 webpack.config.js
 ```javascript
 let path = require(`path`)
@@ -38,4 +30,45 @@ package.json
 	},
 	...
 }
+```
+
+index.html
+```html
+...
+	<script src="dist/bundle.js"></script>
+</body>
+...
+```
+
+## Typescript
+https://webpack.js.org/guides/typescript/
+
+`npm install --save-dev typescript ts-loader`
+
+tsconfig.json
+```json
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"target": "es5"
+	}
+}
+```
+
+webpack.config.js
+```javascript
+...
+module.exports = {
+	devtool: 'inline-source-map',
+	entry: `./app/main.ts`,
+	module: {
+		rules: [
+			{
+				test: /\.tsx?$/,
+				loader: 'ts-loader',
+				exclude: /node_modules/,
+			}
+		]
+	},
+	...
 ```
