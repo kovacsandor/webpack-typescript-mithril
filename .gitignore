@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# =================================
+# ======= Additional rules ========
+# =================================
+
+dist/bundle.js
