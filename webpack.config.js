@@ -2,7 +2,7 @@ let path = require(`path`)
 
 module.exports = {
 	devtool: `inline-source-map`,
-	entry: `./app/Main.ts`,
+	entry: `./src/typescript/Main.ts`,
 	module: {
 		rules: [
 			{
