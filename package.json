@@ -1,5 +1,5 @@
 {
-	"name": "webpack-typescript-mithril",
+	"name": "webpack-typescript-mithril-sass",
 	"version": "1.0.0",
 	"description": "https://webpack.js.org/guides/get-started/",
 	"main": "index.js",
@@ -10,15 +10,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kovacsandor/webpack-typescript-mithril.git"
+		"url": "git+https://github.com/kovacsandor/webpack-typescript-mithril-sass.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/kovacsandor/webpack-typescript-mithril/issues"
+		"url": "https://github.com/kovacsandor/webpack-typescript-mithril-sass/issues"
 	},
-	"homepage": "https://github.com/kovacsandor/webpack-typescript-mithril#readme",
+	"homepage": "https://github.com/kovacsandor/webpack-typescript-mithril-sass#readme",
 	"devDependencies": {
 		"@types/mithril": "^1.1.4",
 		"css-loader": "^0.28.4",
