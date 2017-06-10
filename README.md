@@ -103,7 +103,6 @@ module.exports = {
 		extensions: [`.js`, `.ts`]
 	}
 }
-...
 ```
 
 ## Mithril
@@ -166,6 +165,7 @@ https://webpack.js.org/plugins/extract-text-webpack-plugin/
 
 ### sass-loader
 https://webpack.js.org/loaders/sass-loader/
+
 `npm install sass-loader node-sass css-loader --save-dev`
 
 webpack.config.js
@@ -194,6 +194,16 @@ module.exports = {
 		})
 	]
 }
+```
+
+## normalize.css
+https://github.com/jantimon/html-webpack-plugin
+
+`npm install --save normalize.css`
+
+styles.scss
+```css
+@import '~normalize.css';
 ```
 
 <!--"Basic HTML5 page": {
