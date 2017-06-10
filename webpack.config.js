@@ -1,22 +1,48 @@
-let path = require(`path`)
+const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`)
+const HtmlWebpackPlugin = require(`html-webpack-plugin`)
+const Path = require(`path`)
 
 module.exports = {
 	devtool: `inline-source-map`,
-	entry: `./src/typescript/Main.ts`,
+	entry: `./src/index.js`,
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.scss$/,
+				use: ExtractTextWebpackPlugin.extract({
+					use: [
+						{
+							loader: "css-loader"
+						},
+						{
+							loader: "sass-loader"
+						}
+					]
+				})
+			},
+			{
+				test: /\.html$/,
+				loader: `html-loader`
+			},
+			{
+				test: /\.ts$/,
 				loader: `ts-loader`,
-				exclude: /node_modules/,
+				exclude: /node_modules/
 			}
 		]
 	},
 	output: {
 		filename: `bundle.js`,
-		path: path.resolve(__dirname, `dist`),
-		publicPath: `/dist/`
+		path: Path.resolve(__dirname, `dist`)
 	},
+	plugins: [
+		new ExtractTextWebpackPlugin({
+			filename: `styles.css`
+		}),
+		new HtmlWebpackPlugin({
+			template: `src/html/index.html`
+		})
+	],
 	resolve: {
 		extensions: [`.js`, `.ts`]
 	}

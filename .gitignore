@@ -61,4 +61,4 @@ typings/
 # ======= Additional rules ========
 # =================================
 
-dist/bundle.js
+dist/

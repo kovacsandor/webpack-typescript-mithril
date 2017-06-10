@@ -1,4 +1,4 @@
-# Webpack + DevServer + Typescript + Mithril
+# Webpack + DevServer + Typescript + Mithril + Sass
 ## Webpack
 https://webpack.js.org/guides/get-started/
 
@@ -24,11 +24,9 @@ module.exports = {
 package.json
 ```json
 {
-	...
 	"scripts": {
 		"build": "webpack --config webpack.config.js"
-	},
-	...
+	}
 }
 ```
 
@@ -89,23 +87,21 @@ https://webpack.js.org/guides/development/
 package.json
 ```json
 {
-	...
 	"scripts": {
 		"start": "webpack-dev-server --open"
-	},
-	...
+	}
 }
 ```
 
 webpack.config.js
 ```javascript
-...
-output: {
-	...
-	publicPath: `/dist/`
-},
-resolve: {
-	extensions: [`.js`, `.ts`]
+module.exports = {
+	output: {
+		publicPath: `/dist/`
+	},
+	resolve: {
+		extensions: [`.js`, `.ts`]
+	}
 }
 ...
 ```
@@ -121,14 +117,83 @@ https://github.com/spacejack/mithril.d.ts
 
 tsconfig.json
 ```json
-...
-"target": "es5",
-"lib": [
-	"dom",
-	"es2015",
-	"es2015.promise"
-]
-...
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"target": "es5",
+		"lib": [
+			"dom",
+			"es2015",
+			"es2015.promise"
+		]
+	}
+}
+```
+
+## HtmlWebpackPlugin + html-loader
+https://github.com/jantimon/html-webpack-plugin
+
+`npm install html-webpack-plugin --save-dev`
+
+https://webpack.js.org/loaders/html-loader/
+
+`npm install --save-dev html-loader`
+
+webpack.config.js
+```javascript
+const HtmlWebpackPlugin = require(`html-webpack-plugin`)
+
+module.exports = {
+	module: {
+		rules: [{
+			test: /\.html$/,
+			loader: `html-loader`
+		}]
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: `src/html/index.html`
+		})
+	]
+}
+```
+
+## Sass
+### ExtractTextWebpackPlugin
+https://webpack.js.org/plugins/extract-text-webpack-plugin/
+
+`npm install --save-dev extract-text-webpack-plugin`
+
+### sass-loader
+https://webpack.js.org/loaders/sass-loader/
+`npm install sass-loader node-sass css-loader --save-dev`
+
+webpack.config.js
+```javascript
+const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`)
+
+module.exports = {
+	module: {
+		rules: [{
+			test: /\.scss$/,
+			use: ExtractTextWebpackPlugin.extract({
+				use: [
+					{
+						loader: "css-loader"
+					},
+					{
+						loader: "sass-loader"
+					}
+				]
+			})
+		}]
+	},
+	plugins: [
+		new ExtractTextWebpackPlugin({
+			filename: `styles.css`
+		})
+	]
+}
 ```
 
 <!--"Basic HTML5 page": {
@@ -168,7 +233,7 @@ tsconfig.json
 		"type Vnode = m.Vnode<Attrs, State>",
 		"type VnodeDOM = m.VnodeDOM<Attrs, State>",
 		"",
-		"export let ${1:ComponentName}: Component<Attrs, State> = {",
+		"export const ${1:ComponentName}: Component<Attrs, State> = {",
 		"",
 		"\t// oninit(vnode) { },",
 		"",

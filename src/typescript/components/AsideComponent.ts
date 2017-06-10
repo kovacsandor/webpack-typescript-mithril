@@ -7,7 +7,7 @@ interface State { }
 type Vnode = m.Vnode<Attrs, State>
 type VnodeDOM = m.VnodeDOM<Attrs, State>
 
-export let AsideComponent: Component<Attrs, State> = {
+export const AsideComponent: Component<Attrs, State> = {
 
     // oninit(vnode) { },
 
