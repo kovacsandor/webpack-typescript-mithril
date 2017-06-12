@@ -1,9 +1,10 @@
 import * as m from 'mithril'
-import { Component } from 'mithril'
 
 import { AsideComponent } from './AsideComponent'
+import { Component } from 'mithril'
 import { FooterComponent } from './FooterComponent'
 import { HeaderComponent } from './HeaderComponent'
+import { ImageComponent } from './ImageComponent'
 import { MainComponent } from './MainComponent'
 
 export interface Attrs { }
@@ -21,7 +22,8 @@ export const WrapperComponent: Component<Attrs, State> = {
             m(HeaderComponent),
             m(MainComponent),
             m(AsideComponent),
-            m(FooterComponent)
+            m(FooterComponent),
+            m(ImageComponent, { name: `test-image.svg` })
         ]
     },
 
