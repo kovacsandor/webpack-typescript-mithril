@@ -7,7 +7,7 @@ import { HeaderComponent } from './HeaderComponent'
 import { ImageComponent } from './ImageComponent'
 import { MainComponent } from './MainComponent'
 
-export interface Attrs { }
+interface Attrs { }
 interface State { }
 
 type Vnode = m.Vnode<Attrs, State>
