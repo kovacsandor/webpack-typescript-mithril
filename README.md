@@ -206,6 +206,36 @@ styles.scss
 @import '~normalize.css';
 ```
 
+## file-loader
+https://webpack.js.org/loaders/file-loader/
+
+`npm install --save-dev file-loader`
+
+webpack.config.js
+```javascript
+const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`)
+
+module.exports = {
+	module: {
+		rules: [{
+			test: /\.(gif|jpg|png|svg)$/,
+			loader: `file-loader?name=assets/[name].[ext]`
+		}]
+	}
+}
+```
+
+This package contains type definitions for Node.js
+
+`npm install --save-dev @types/node`
+
+ImageComponent.ts
+```javascript
+m(`img`, {
+	src: require(`file-loader?emitFile=false&name=assets/[name].[ext]!../../assets/images/test-image.svg`)
+})
+```
+
 <!--"Basic HTML5 page": {
 	"prefix": "html5",
 	"body": [

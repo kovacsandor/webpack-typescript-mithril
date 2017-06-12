@@ -8,21 +8,25 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.scss$/,
-				use: ExtractTextWebpackPlugin.extract({
-					use: [
-						{
-							loader: "css-loader"
-						},
-						{
-							loader: "sass-loader"
-						}
-					]
-				})
+				test: /\.(gif|jpg|png|svg)$/,
+				loader: `file-loader?name=assets/[name].[ext]`
 			},
 			{
 				test: /\.html$/,
 				loader: `html-loader`
+			},
+			{
+				test: /\.scss$/,
+				use: ExtractTextWebpackPlugin.extract({
+					use: [
+						{
+							loader: `css-loader`
+						},
+						{
+							loader: `sass-loader`
+						}
+					]
+				})
 			},
 			{
 				test: /\.ts$/,
