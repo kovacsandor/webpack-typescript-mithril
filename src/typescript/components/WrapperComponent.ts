@@ -24,7 +24,7 @@ export const WrapperComponent: Component<Attrs, State> = {
             m(AsideComponent),
             m(FooterComponent),
             m(ImageComponent, {
-                path: `assets/images/test-image.svg`
+                path: require(`../../assets/images/test-image.svg`)
             })
         ]
     },

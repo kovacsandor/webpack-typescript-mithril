@@ -19,9 +19,9 @@ export let ImageComponent: Component<Attrs, State> = {
 	view(vnode) {
 		return (
 			m(`img`, {
-                alt: ifExists(vnode.attrs.alt),
-				src: require(`file-loader?emitFile=false&name=assets/[name].[ext]!../../${vnode.attrs.path}`)
-            })
+				alt: ifExists(vnode.attrs.alt),
+				src: vnode.attrs.path
+			})
 		)
 	},
 
