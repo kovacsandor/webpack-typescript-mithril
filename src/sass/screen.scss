@@ -1,6 +1,11 @@
-@import '~normalize.css';
+@import 'mixins/normal-text';
 @import 'variables';
-@import 'body';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import '~normalize.css';
+
+@import 'basics';
+@import 'loader';
 @import 'button';
 @import 'icon';
 @import 'helpers';

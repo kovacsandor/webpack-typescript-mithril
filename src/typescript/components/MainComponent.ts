@@ -1,5 +1,7 @@
 import * as m from 'mithril'
+
 import { Component } from 'mithril'
+import { LoaderComponent } from './LoaderComponent'
 
 export interface Attrs { }
 interface State { }
@@ -14,7 +16,10 @@ export const MainComponent: Component<Attrs, State> = {
     view(vnode) {
         return (
             m(`main`,
-                `MainComponent`
+                `MainComponent`,
+                m(LoaderComponent, {
+                    isSmall: true
+                })
             )
         )
     },

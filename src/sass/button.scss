@@ -1,10 +1,11 @@
 .#{$P}-button {
+	
+	@include normal-text;
+
 	background-color: $LINK_BACKGROUND_COLOR;
 	border: none;
 	color: $LINK_COLOR;
 	cursor: pointer;
-    font-size: $FONT_SIZE;
-    line-height: $LINE_HEIGHT;
     padding: $BUTTON_PADDING;
 
 	&:hover {

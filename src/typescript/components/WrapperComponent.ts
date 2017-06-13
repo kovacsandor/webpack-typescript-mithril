@@ -29,7 +29,6 @@ export const WrapperComponent: Component<Attrs, State> = {
             m(FooterComponent),
             m(ButtonComponent, {
                 icon: Icon.menu,
-                isDropdown: true,
                 isLabelVisible: true,
                 label: `Button`
             }),

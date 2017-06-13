@@ -1,7 +1,8 @@
 .#{$P}-icon {
+
 	display: inline-block;
 	height: $ICON_SIZE;
-	vertical-align: text-bottom;
+	vertical-align: sub;
 	width: $ICON_SIZE;
 
 	& * {

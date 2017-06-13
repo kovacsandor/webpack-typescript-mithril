@@ -12,15 +12,15 @@ interface State { }
 type Vnode = m.Vnode<Attrs, State>
 type VnodeDOM = m.VnodeDOM<Attrs, State>
 
-export let ImageComponent: Component<Attrs, State> = {
+export const ImageComponent: Component<Attrs, State> = {
 
 	// oninit(vnode) { },
 
 	view(vnode) {
 		return (
 			m(`img`, {
-				alt: ifExists(vnode.attrs.alt),
-				src: vnode.attrs.path
+				'alt': ifExists(vnode.attrs.alt),
+				'src': vnode.attrs.path
 			})
 		)
 	},
