@@ -9,7 +9,8 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(gif|jpg|png|svg)$/,
-				loader: `file-loader?name=assets/[name].[ext]`
+				loader: `file-loader?name=assets/[name].[ext]`,
+				exclude: Path.resolve(__dirname, `./src/assets/icons/`)
 			},
 			{
 				test: /\.html$/,
@@ -29,6 +30,11 @@ module.exports = {
 				})
 			},
 			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader',
+				exclude: Path.resolve(__dirname, `./src/assets/images/`)
+			},
+			{
 				test: /\.ts$/,
 				loader: `ts-loader`,
 				exclude: /node_modules/
@@ -44,6 +50,7 @@ module.exports = {
 			filename: `styles.css`
 		}),
 		new HtmlWebpackPlugin({
+			favicon: `src/assets/images/favicon.ico`,
 			template: `src/html/index.html`
 		})
 	],

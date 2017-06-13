@@ -206,15 +206,13 @@ styles.scss
 @import '~normalize.css';
 ```
 
-## file-loader
+## file-loader & @types/node
 https://webpack.js.org/loaders/file-loader/
 
 `npm install --save-dev file-loader`
 
 webpack.config.js
 ```javascript
-const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`)
-
 module.exports = {
 	module: {
 		rules: [{
@@ -232,8 +230,36 @@ This package contains type definitions for Node.js
 ImageComponent.ts
 ```javascript
 m(`img`, {
-	src: require(`file-loader?emitFile=false&name=assets/[name].[ext]!../../assets/images/test-image.svg`)
+	src: require(`../../assets/images/test-image.svg`)
 })
+```
+
+## svg-inline-loader
+https://webpack.js.org/loaders/svg-inline-loader/
+
+`npm install svg-inline-loader --save-dev`
+
+webpack.config.js
+```javascript
+module.exports = {
+	module: {
+		rules: [{
+			test: /\.(gif|jpg|png|svg)$/,
+			loader: `file-loader?name=assets/[name].[ext]`,
+			exclude: Path.resolve(__dirname, `./src/assets/icons/`)
+		},
+		{
+			test: /\.svg$/,
+			loader: 'svg-inline-loader',
+			exclude: Path.resolve(__dirname, `./src/assets/images/`)
+		}]
+	}
+}
+```
+
+IconComponent.ts
+```javascript
+m.trust(require(`../../assets/icons/test-icon.svg`))
 ```
 
 <!--"Basic HTML5 page": {

@@ -1,5 +1,4 @@
 @import '~normalize.css';
-
-body {
-    background: lightcoral;
-}
+@import 'variables';
+@import 'body';
+@import 'icon';

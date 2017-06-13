@@ -1,0 +1,18 @@
+.#{$P}-icon {
+	display: inline-block;
+	height: $ICON_SIZE;
+	vertical-align: text-bottom;
+	width: $ICON_SIZE;
+
+	& * {
+		fill: $TEXT_COLOR !important;
+	}
+
+	&.#{$P}--link * {
+		fill: $LINK_COLOR !important;
+	}
+
+	&.#{$P}--link:hover * {
+		fill: $LINK_HOVER_COLOR !important;
+	}
+}
