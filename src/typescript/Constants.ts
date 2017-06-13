@@ -1,4 +1,5 @@
 export const Icon = {
+	dropdown: require(`../assets/icons/dropdown.svg`),
 	menu: require(`../assets/icons/menu.svg`)
 }
 

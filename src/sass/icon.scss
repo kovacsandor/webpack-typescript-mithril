@@ -7,12 +7,23 @@
 	& * {
 		fill: $TEXT_COLOR !important;
 	}
+}
 
-	&.#{$P}--link * {
-		fill: $LINK_COLOR !important;
+.#{$P}-button {
+
+	& .#{$P}-icon {
+
+		& * {
+			fill: $LINK_COLOR !important;
+		}
 	}
 
-	&.#{$P}--link:hover * {
-		fill: $LINK_HOVER_COLOR !important;
+	&:hover {
+		& .#{$P}-icon {
+
+			& * {
+				fill: $LINK_COLOR_HOVER !important;
+			}
+		}
 	}
 }
