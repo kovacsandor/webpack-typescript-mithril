@@ -1,6 +1,6 @@
 import * as m from 'mithril'
 
-import { Icon, P } from '../Constants'
+import { ICON, P } from '../Constants'
 
 import { Component } from 'mithril'
 import { IconComponent } from './IconComponent'
@@ -28,7 +28,7 @@ export const ButtonComponent: Component<Attrs, State> = {
 				(vnode.attrs.icon ?
 					[
 						m(IconComponent, {
-							icon: Icon.menu
+							icon: vnode.attrs.icon
 						}),
 						` `
 					]
@@ -46,7 +46,7 @@ export const ButtonComponent: Component<Attrs, State> = {
 				),
 				(vnode.attrs.isDropdown ?
 					m(IconComponent, {
-						icon: Icon.dropdown
+						icon: ICON.dropdown
 					})
 					:
 					``

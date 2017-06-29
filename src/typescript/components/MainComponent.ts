@@ -3,6 +3,12 @@ import * as m from 'mithril'
 import { Component } from 'mithril'
 import { LoaderComponent } from './LoaderComponent'
 
+import { ICON, P } from '../Constants'
+import { ButtonComponent } from './ButtonComponent'
+
+import { ImageComponent } from './ImageComponent'
+import { IconComponent } from './IconComponent'
+
 export interface Attrs { }
 interface State { }
 
@@ -17,8 +23,14 @@ export const MainComponent: Component<Attrs, State> = {
         return (
             m(`main`,
                 `MainComponent`,
-                m(LoaderComponent, {
-                    isSmall: true
+                m(LoaderComponent),
+                m(ButtonComponent, {
+                    icon: ICON.menu,
+                    isLabelVisible: true,
+                    label: `Button`
+                }),
+                m(ImageComponent, {
+                    path: require(`../../assets/images/test-image.svg`)
                 })
             )
         )

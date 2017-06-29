@@ -1,7 +1,7 @@
 import * as m from 'mithril'
 
 import { Component } from 'mithril'
-import { ifExists } from '../Constants'
+import { ifExists } from '../Helpers'
 
 export interface Attrs {
 	alt?: string

@@ -1,6 +1,6 @@
 @mixin normal-text {
 
-	font-family: $FONT_FAMILY;
-	font-size: $FONT_SIZE;
-    line-height: $LINE_HEIGHT;
+	font-family: $TEXT_FONT_FAMILY;
+	font-size: $TEXT_FONT_SIZE;
+    line-height: $TEXT_LINE_HEIGHT;
 }

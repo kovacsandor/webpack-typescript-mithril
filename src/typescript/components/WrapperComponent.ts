@@ -1,14 +1,9 @@
 import * as m from 'mithril'
 
-import { Icon, P } from '../Constants'
-
 import { AsideComponent } from './AsideComponent'
-import { ButtonComponent } from './ButtonComponent'
 import { Component } from 'mithril'
 import { FooterComponent } from './FooterComponent'
 import { HeaderComponent } from './HeaderComponent'
-import { IconComponent } from './IconComponent'
-import { ImageComponent } from './ImageComponent'
 import { MainComponent } from './MainComponent'
 
 interface Attrs { }
@@ -27,14 +22,6 @@ export const WrapperComponent: Component<Attrs, State> = {
             m(MainComponent),
             m(AsideComponent),
             m(FooterComponent),
-            m(ButtonComponent, {
-                icon: Icon.menu,
-                isLabelVisible: true,
-                label: `Button`
-            }),
-            m(ImageComponent, {
-                path: require(`../../assets/images/test-image.svg`)
-            })
         ]
     },
 
