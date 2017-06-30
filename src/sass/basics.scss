@@ -7,7 +7,7 @@ body {
 
 	@include normal-text;
 
-	background-color: $BACKGROUND_COLOR;
+	background-color: $BODY_BACKGROUND_COLOR;
 	color: $TEXT_COLOR;
 	height: 100%;
 	min-width: $BODY_MIN_WIDTH;
