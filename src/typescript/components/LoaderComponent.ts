@@ -4,15 +4,17 @@ import { Component } from 'mithril'
 import { P } from '../Constants'
 import { renderMultiple } from '../Helpers'
 
-export interface Attrs {
-	isBig?: boolean
+export declare namespace LoaderComponent {
+	interface Attrs {
+		isBig?: boolean
+	}
+	interface State { }
 }
-interface State { }
 
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
+type Vnode = m.Vnode<LoaderComponent.Attrs, LoaderComponent.State>
+type VnodeDOM = m.VnodeDOM<LoaderComponent.Attrs, LoaderComponent.State>
 
-export const LoaderComponent: Component<Attrs, State> = {
+export const LoaderComponent: Component<LoaderComponent.Attrs, LoaderComponent.State> = {
 
 	// oninit(vnode) {},
 

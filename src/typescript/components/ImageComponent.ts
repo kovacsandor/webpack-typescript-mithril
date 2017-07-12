@@ -3,16 +3,18 @@ import * as m from 'mithril'
 import { Component } from 'mithril'
 import { ifExists } from '../Helpers'
 
-export interface Attrs {
-	alt?: string
-	path: string
+export declare namespace ImageComponent {
+	interface Attrs {
+		alt?: string
+		path: string
+	}
+	interface State { }
 }
-interface State { }
 
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
+type Vnode = m.Vnode<ImageComponent.Attrs, ImageComponent.State>
+type VnodeDOM = m.VnodeDOM<ImageComponent.Attrs, ImageComponent.State>
 
-export const ImageComponent: Component<Attrs, State> = {
+export const ImageComponent: Component<ImageComponent.Attrs, ImageComponent.State> = {
 
 	// oninit(vnode) { },
 

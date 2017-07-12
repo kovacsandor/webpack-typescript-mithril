@@ -3,16 +3,18 @@ import * as m from 'mithril'
 import { Component } from 'mithril'
 import { P } from '../Constants'
 
-export interface Attrs {
-	icon: string
-	link?: boolean
+export declare namespace IconComponent {
+	interface Attrs {
+		icon: string
+		link?: boolean
+	}
+	interface State { }
 }
-interface State { }
 
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
+type Vnode = m.Vnode<IconComponent.Attrs, IconComponent.State>
+type VnodeDOM = m.VnodeDOM<IconComponent.Attrs, IconComponent.State>
 
-export const IconComponent: Component<Attrs, State> = {
+export const IconComponent: Component<IconComponent.Attrs, IconComponent.State> = {
 
 	// oninit(vnode) { },
 
