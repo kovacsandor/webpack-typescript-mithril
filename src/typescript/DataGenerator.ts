@@ -1,8 +1,9 @@
 import { generateRandomNumber, generateText } from './Helpers'
 import { VOCABULARY } from './Constants'
-import { UserData } from "./data/UserData";
+import { UserData } from './data/UserData'
+import { PostData } from './data/PostData'
 
-class User implements UserData {
+export class User implements UserData {
     email: string = `${generateText(VOCABULARY, 1).replace(`.`, ``).toLocaleLowerCase()}@${generateText(VOCABULARY, 1).replace(`.`, ``).toLocaleLowerCase()}.com`
     firstName: string = generateText(VOCABULARY, 1).replace(`.`, ``)
     id: string = `id:${generateRandomNumber(9999, 1000)}`
@@ -10,8 +11,16 @@ class User implements UserData {
     password: string = `${generateText(VOCABULARY, 1).replace(`.`, `!`)}${generateRandomNumber(99, 1)}`
 }
 
-export function generateData(count: number): User[] {
-    let result: User[] = []
-    for (let i = 0; i < count; i++) result.push(new User())
+export class Post implements PostData {
+    date: Date = new Date()
+    id: string = `id:${generateRandomNumber(9999, 1000)}`
+    isHidden: boolean = generateRandomNumber(1) == 1 ? true : false
+    post: string = generateText(VOCABULARY, generateRandomNumber(10, 5), generateRandomNumber(5, 3), generateRandomNumber(3, 1))
+    userId: string = `id:${generateRandomNumber(9999, 1000)}`
+}
+
+export function generateData<T>(count: number, className: { new(): T }): T[] {
+    let result: T[] = []
+    for (let i = 0; i < count; i++) result.push(new className())
     return result
 }
