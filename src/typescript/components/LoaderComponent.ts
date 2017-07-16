@@ -2,7 +2,7 @@ import * as m from 'mithril'
 
 import { Component } from 'mithril'
 import { P } from '../Constants'
-import { renderMultiple } from '../Helpers'
+import { multiplyObject } from '../Helpers'
 
 export interface Attrs {
 	isBig?: boolean
@@ -21,7 +21,7 @@ export const LoaderComponent: Component<Attrs, State> = {
 			m(`div`, {
 				'class': `${P}-loader`
 			},
-				renderMultiple(3,
+				multiplyObject(3,
 					m(`div`, {
 						'class': `${P}-loader-dot ${vnode.attrs.isBig ? `` : `${P}--small`}`
 					})
