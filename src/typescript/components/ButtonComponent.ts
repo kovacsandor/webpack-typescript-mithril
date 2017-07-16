@@ -5,25 +5,30 @@ import { ICON, P } from '../Constants'
 import { Component } from 'mithril'
 import { IconComponent } from './IconComponent'
 
-export interface Attrs {
-	icon?: string
-	isDropdown?: boolean
-	isLabelVisible: boolean
-	label: string
+export declare namespace ButtonComponent {
+	interface Attrs {
+		icon?: string
+		isDropdown?: boolean
+		isLabelHidden?: boolean
+		label: string
+		onclick: Function
+	}
+	interface State { }
 }
-interface State { }
 
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
+type Vnode = m.Vnode<ButtonComponent.Attrs, ButtonComponent.State>
+type VnodeDOM = m.VnodeDOM<ButtonComponent.Attrs, ButtonComponent.State>
 
-export const ButtonComponent: Component<Attrs, State> = {
+export const ButtonComponent: Component<ButtonComponent.Attrs, ButtonComponent.State> = {
 
 	// oninit(vnode) { },
 
 	view(vnode) {
+
 		return (
 			m(`button`, {
-				'class': `${P}-button`
+				'class': `${P}-button`,
+				'onclick': vnode.attrs.onclick
 			},
 				(vnode.attrs.icon ?
 					[
@@ -35,14 +40,14 @@ export const ButtonComponent: Component<Attrs, State> = {
 					:
 					``
 				),
-				(vnode.attrs.isLabelVisible ?
-					vnode.attrs.label
-					:
+				(vnode.attrs.isLabelHidden ?
 					m(`span`, {
 						'class': `${P}-screen-readers`
 					},
 						vnode.attrs.label + `${vnode.attrs.isDropdown ? ` options` : ``}`
 					)
+					:
+					vnode.attrs.label
 				),
 				(vnode.attrs.isDropdown ?
 					m(IconComponent, {

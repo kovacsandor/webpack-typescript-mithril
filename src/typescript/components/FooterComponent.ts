@@ -1,13 +1,16 @@
 import * as m from 'mithril'
+
 import { Component } from 'mithril'
 
-export interface Attrs { }
-interface State { }
+export declare namespace FooterComponent {
+    interface Attrs { }
+    interface State { }
+}
 
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
+type Vnode = m.Vnode<FooterComponent.Attrs, FooterComponent.State>
+type VnodeDOM = m.VnodeDOM<FooterComponent.Attrs, FooterComponent.State>
 
-export const FooterComponent: Component<Attrs, State> = {
+export const FooterComponent: Component<FooterComponent.Attrs, FooterComponent.State> = {
 
     // oninit(vnode) { },
 

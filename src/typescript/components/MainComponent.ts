@@ -1,34 +1,36 @@
 import * as m from 'mithril'
 
+import { ButtonComponent } from './ButtonComponent'
 import { Component } from 'mithril'
+import { ICON } from '../Constants'
+import { ImageComponent } from './ImageComponent'
 import { LoaderComponent } from './LoaderComponent'
 
-import { ICON, P } from '../Constants'
-import { ButtonComponent } from './ButtonComponent'
+export declare namespace MainComponent {
+    interface Attrs { }
+    interface State { }
+}
 
-import { ImageComponent } from './ImageComponent'
-import { IconComponent } from './IconComponent'
+type Vnode = m.Vnode<MainComponent.Attrs, MainComponent.State>
+type VnodeDOM = m.VnodeDOM<MainComponent.Attrs, MainComponent.State>
 
-export interface Attrs { }
-interface State { }
-
-type Vnode = m.Vnode<Attrs, State>
-type VnodeDOM = m.VnodeDOM<Attrs, State>
-
-export const MainComponent: Component<Attrs, State> = {
+export const MainComponent: Component<MainComponent.Attrs, MainComponent.State> = {
 
     // oninit(vnode) { },
 
     view(vnode) {
+
+        let buttonComponentAttrs: ButtonComponent.Attrs = {
+            icon: ICON.menu,
+            label: `Button`,
+            onclick: () => alert(buttonComponentAttrs.label)
+        }
+
         return (
             m(`main`,
                 `MainComponent`,
                 m(LoaderComponent),
-                m(ButtonComponent, {
-                    icon: ICON.menu,
-                    isLabelVisible: true,
-                    label: `Button`
-                }),
+                m(ButtonComponent, buttonComponentAttrs),
                 m(ImageComponent, {
                     path: require(`../../assets/images/test-image.svg`)
                 })
