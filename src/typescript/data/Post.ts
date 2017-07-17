@@ -1,4 +1,4 @@
-export interface PostData {
+export interface Post {
     date: Date
     id: string
     isHidden: boolean

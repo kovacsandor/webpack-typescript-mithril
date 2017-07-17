@@ -19,6 +19,7 @@ export const WrapperComponent: Component<WrapperComponent.Attrs, WrapperComponen
     // oninit(vnode) { },
 
     view(vnode) {
+
         return [
             m(HeaderComponent),
             m(MainComponent),
