@@ -23,7 +23,14 @@ export const MainComponent: Component<MainComponent.Attrs, MainComponent.State> 
         let buttonComponentAttrs: ButtonComponent.Attrs = {
             icon: ICON.menu,
             label: `Button`,
-            onclick: () => alert(buttonComponentAttrs.label)
+            onclick: () => {
+                m.request({
+                    method: `GET`,
+                    url: `http://localhost:3000/users?id=id:1516&firstName=Accumsan`,
+                    withCredentials: true,
+                })
+                    .then(data => console.log(data))
+            }
         }
 
         return (

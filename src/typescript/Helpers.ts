@@ -35,18 +35,19 @@ export function generateText(vocabulary: string[], wordCount?: number, sentenceC
 					let previousWords: string[] = result.trim().split(` `)
 					if (word != previousWords[previousWords.length - 1].toLowerCase()) isDuplicate = false
 				}
-				if (k == 0) {
-					try {
-						word = word.charAt(0).toUpperCase() + word.slice(1)
-					} catch (error) {
-						console.error(error)
-					}
-				}
-				result += word
-				if (k != words - 1) result += ` `
+				try { if (k == 0) word = word.charAt(0).toUpperCase() + word.slice(1) } catch (error) { console.error(error) }
+				result += `${word} `
 			}
-			result += `.`
+			result = `${result.trim()}.`
 		}
 	}
+	return result
+}
+
+/** Generates an array of words from a given text. */
+export function generateWords(text: string): string[] {
+	let result: string[] = []
+	let words: string[] = text.toLowerCase().replace(/[^A-Za-z0-9\s]/g, ``).split(` `)
+	for (let word of words) if (result.indexOf(word) < 0) result.push(word)
 	return result
 }
