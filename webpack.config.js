@@ -4,7 +4,7 @@ const Path = require(`path`)
 
 module.exports = {
 	devtool: `inline-source-map`,
-	entry: `./index.js`,
+	entry: `./src/index.js`,
 	module: {
 		rules: [
 			{

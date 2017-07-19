@@ -1,6 +1,7 @@
 .#{$P}-button {
 	
 	@include normal-text;
+	@include transition-out;
 
 	background-color: $LINK_BACKGROUND_COLOR;
 	border: none;
@@ -9,6 +10,10 @@
     padding: $BUTTON_PADDING;
 
 	&:hover {
+
+		@include transition-in;
+
+		background-color: $LINK_BACKGROUND_COLOR_HOVER;
 		color: $LINK_COLOR_HOVER;
 	}
 }

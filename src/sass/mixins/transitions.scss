@@ -1,0 +1,9 @@
+@mixin transition-in {
+
+	transition: $TRANSITION_IN;
+}
+
+@mixin transition-out {
+
+	transition: $TRANSITION_OUT;
+}
